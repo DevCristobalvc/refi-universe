@@ -1,13 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import { Languages, ChevronDown, Check } from "lucide-react"
-import { useTranslation, type Locale } from "@/lib/translations"
+import { useTranslation } from "@/lib/translations"
+import { useLocale } from "@/lib/useLocale"
+import { LanguageSelector } from "@/components/language-selector"
 import Link from "next/link"
 
 export default function Home() {
-  const [locale, setLocale] = useState<Locale>("en")
-  const [showLangMenu, setShowLangMenu] = useState(false)
+  const { locale, changeLocale } = useLocale()
   const t = useTranslation(locale)
 
   return (
@@ -22,56 +21,13 @@ export default function Home() {
               </span>
               <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
                 <div className="w-5 h-5 md:w-8 md:h-8 border-2 border-black flex items-center justify-center font-bold text-[9px] md:text-xs">
-                  RP
+                  🌎
                 </div>
-                <span className="font-bold text-[11px] md:text-sm tracking-tight">ReFi_Universe_Protocol</span>
+                <span className="font-bold text-[11px] md:text-sm tracking-tight">ReFiUP</span>
               </Link>
             </div>
 
-            <div className="relative">
-              <button
-                onClick={() => setShowLangMenu(!showLangMenu)}
-                className="hover:bg-black/5 transition-colors flex items-center gap-1 border border-black/20 px-2 py-1 text-[9px] md:text-xs"
-              >
-                <Languages className="w-3 h-3 md:w-4 md:h-4" />
-                <span className="uppercase hidden sm:inline">{locale}</span>
-                <ChevronDown className="w-3 h-3" />
-              </button>
-              {showLangMenu && (
-                <div className="absolute right-0 mt-1 bg-white border border-black shadow-sm overflow-hidden min-w-[100px] z-50">
-                  <button
-                    onClick={() => {
-                      setLocale("en")
-                      setShowLangMenu(false)
-                    }}
-                    className="w-full px-3 py-2 text-left hover:bg-black/5 flex items-center justify-between text-xs"
-                  >
-                    <span>EN</span>
-                    {locale === "en" && <Check className="w-3 h-3" />}
-                  </button>
-                  <button
-                    onClick={() => {
-                      setLocale("es")
-                      setShowLangMenu(false)
-                    }}
-                    className="w-full px-3 py-2 text-left hover:bg-black/5 flex items-center justify-between text-xs"
-                  >
-                    <span>ES</span>
-                    {locale === "es" && <Check className="w-3 h-3" />}
-                  </button>
-                  <button
-                    onClick={() => {
-                      setLocale("pt")
-                      setShowLangMenu(false)
-                    }}
-                    className="w-full px-3 py-2 text-left hover:bg-black/5 flex items-center justify-between text-xs"
-                  >
-                    <span>PT</span>
-                    {locale === "pt" && <Check className="w-3 h-3" />}
-                  </button>
-                </div>
-              )}
-            </div>
+            <LanguageSelector locale={locale} onLocaleChange={changeLocale} />
           </div>
         </nav>
       </header>
@@ -167,27 +123,29 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="border-t border-black bg-black text-white py-2 flex-shrink-0 overflow-hidden">
-        <div className="flex animate-marquee-slide">
-          <div className="flex whitespace-nowrap">
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ETH CALI</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ETH COLOMBIA</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">UVD</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">AFRICA</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">OG</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">CYPHER</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ALERT</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">REKT</span>
-          </div>
-          <div className="flex whitespace-nowrap" aria-hidden="true">
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ETH CALI</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ETH COLOMBIA</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">UVD</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">AFRICA</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">OG</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">CYPHER</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ALERT</span>
-            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">REKT</span>
+      <footer className="border-t border-black bg-black text-white py-3 md:py-4 flex-shrink-0 w-full overflow-hidden relative">
+        <div className="absolute inset-0 flex items-center">
+          <div className="flex animate-marquee-slide">
+            <div className="flex whitespace-nowrap">
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ETH CALI</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ETH COLOMBIA</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">UVD</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">AFRICA</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">OG</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">CYPHER</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ALERT</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">REKT</span>
+            </div>
+            <div className="flex whitespace-nowrap" aria-hidden="true">
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ETH CALI</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ETH COLOMBIA</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">UVD</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">AFRICA</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">OG</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">CYPHER</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ALERT</span>
+              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">REKT</span>
+            </div>
           </div>
         </div>
       </footer>

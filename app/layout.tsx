@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -10,7 +9,6 @@ export const metadata: Metadata = {
   title: "ReFi Universe Protocol (ReFiUP) - White Paper",
   description:
     "Like Pokémon Go — but instead of catching Pokémon, you collect trash. Save the world. Have fun. A regenerative finance protocol for humanity.",
-  generator: "v0.app",
   keywords: [
     "ReFi",
     "Regenerative Finance",
@@ -50,7 +48,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-mono antialiased`}>
         {children}
-        <Analytics />
       </body>
     </html>
   )

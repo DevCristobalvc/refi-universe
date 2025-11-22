@@ -90,7 +90,7 @@
     @apply bg-background text-foreground;
   }
 
-  /* Faster carousel animation with better spacing symmetry */
+  /* Smooth continuous carousel animation */
   @keyframes marquee-slide {
     0% {
       transform: translateX(0);
@@ -101,7 +101,9 @@
   }
 
   .animate-marquee-slide {
-    animation: marquee-slide 12s linear infinite;
+    animation: marquee-slide 20s linear infinite;
+    display: inline-flex;
+    will-change: transform;
   }
 
   /* Typewriter cursor effect */

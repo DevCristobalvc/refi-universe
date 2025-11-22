@@ -1,13 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { Languages, ChevronDown, Check, ArrowLeft } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import { useTranslation, type Locale } from "@/lib/translations"
+import { useLocale } from "@/lib/useLocale"
+import { LanguageSelector } from "@/components/language-selector"
 import Link from "next/link"
 
 export default function HistoryPage() {
-  const [locale, setLocale] = useState<Locale>("en")
-  const [showLangMenu, setShowLangMenu] = useState(false)
+  const { locale, changeLocale } = useLocale()
   const t = useTranslation(locale)
 
   return (
@@ -22,40 +23,7 @@ export default function HistoryPage() {
               <span className="font-bold text-sm tracking-tight">ReFi_Universe_Protocol</span>
             </Link>
 
-            <div className="relative">
-              <button
-                onClick={() => setShowLangMenu(!showLangMenu)}
-                className="hover:bg-black/5 transition-colors flex items-center gap-1 border border-black/20 px-2 py-1 text-xs"
-              >
-                <Languages className="w-3 h-3" />
-                <span className="uppercase">{locale}</span>
-                <ChevronDown className="w-3 h-3" />
-              </button>
-              {showLangMenu && (
-                <div className="absolute right-0 mt-1 bg-white border border-black shadow-sm overflow-hidden min-w-[100px] z-50">
-                  <button
-                    onClick={() => {
-                      setLocale("en")
-                      setShowLangMenu(false)
-                    }}
-                    className="w-full px-3 py-2 text-left hover:bg-black/5 flex items-center justify-between text-xs"
-                  >
-                    <span>EN</span>
-                    {locale === "en" && <Check className="w-3 h-3" />}
-                  </button>
-                  <button
-                    onClick={() => {
-                      setLocale("es")
-                      setShowLangMenu(false)
-                    }}
-                    className="w-full px-3 py-2 text-left hover:bg-black/5 flex items-center justify-between text-xs"
-                  >
-                    <span>ES</span>
-                    {locale === "es" && <Check className="w-3 h-3" />}
-                  </button>
-                </div>
-              )}
-            </div>
+            <LanguageSelector locale={locale} onLocaleChange={changeLocale} />
           </div>
         </nav>
       </header>
