@@ -16,12 +16,12 @@ export const translations = {
       title1: "EL 15 DE NOV DE 2025,",
       title2: "EN DEVCONNECT,",
       title3: "EL CIELO SE CAYÓ.",
-      subtitle: "VIENTO, LLUVIA, CALOR EXTREMO EN 24 HORAS.",
+      subtitle: "VIENTO, LLUVIA, CALOR EXTREMO EN 24 HORAS, en un mes de verano",
     },
     critical: {
       title: "Mientras el clima colapsaba afuera, adentro seguíamos optimizando rendimientos APY del 0.001%.",
       description:
-        "Ethereum nació para coordinar a la humanidad, no solo para especular con ella. El 99% de las dApps hoy son casinos glorificados.",
+        "web3 nació para coordinar a la humanidad, no solo para especular con ella. El 99% de las dApps hoy son casinos glorificados.",
       highlight: "Hemos fallado a la visión original.",
     },
     solution: {
@@ -162,7 +162,7 @@ export const translations = {
         "Un protocolo de finanzas regenerativas para la humanidad. Vibes OG. Energía Cypher. Un mensaje del futuro disfrazado como white paper.",
       energy: "🜁 Powered by Open-Source Humanity",
       alerts: {
-        defi: "SI ESTÁS CONSTRUYENDO DEFI NO ERES HUMANO 🚨",
+        defi: "SI ESTÁS CONSTRUYENDO DEFI NO ERES HUMANO 🖕",
         refi: "FXK DEFI — CONSTRUYE REFI.",
       },
       powered: {
@@ -181,9 +181,9 @@ export const translations = {
         empty: "(Open to fill later)",
       },
       manifesto: {
-        p1: "El clima colapsó el 15 de noviembre de 2025 en DevConnect Buenos Aires. Mientras afuera había viento, lluvia y calor extremo en 24 horas, adentro seguíamos optimizando rendimientos del 0.001%. Ethereum nació para coordinar a la humanidad, no solo para especular.",
+        p1: "El clima colapsó el 15 de noviembre de 2025 en DevConnect Buenos Aires. Mientras afuera había viento, lluvia y calor extremo en 24 horas, adentro seguíamos optimizando rendimientos del 0.001%. web3 nació para coordinar a la humanidad, no solo para especular.",
         p2: "ReFi Universe Protocol usa Zero Knowledge Proofs para proteger tu privacidad mientras verificas impacto real. AI Agents (x402, ERC-8002) validan cada limpieza contra datos satelitales. No más greenwashing. No más KYC. Solo matemática, impacto y recompensas.",
-        p3: "Esta es la visión original de Ethereum: coordinar humanos para resolver problemas reales. No casinos. No especulación. Regeneración.",
+        p3: "Esta es la visión original de web3: coordinar humanos para resolver problemas reales. No casinos. No especulación. Regeneración.",
       },
       footer: {
         heading: "Footer",
@@ -199,19 +199,19 @@ export const translations = {
       },
     },
     home: {
-      title: "ReFi Universe Protocol",
-      tagline: "Coordinate humans to clean the planet. Verify impact with AI. Protect privacy with ZK.",
+      title: "Protocolo ReFi Universe",
+      tagline: "Coordina humanos para limpiar el planeta. Verifica el impacto con IA. Protege la privacidad con ZK.",
       problem: {
-        title: "→ Problem",
-        desc: "Carbon footprint from human activity is destroying the planet. Current systems can't coordinate cleanup at scale while protecting privacy.",
+        title: "→ Problema",
+        desc: "La huella de carbono de la actividad humana está destruyendo el planeta. Los sistemas actuales no pueden coordinar la limpieza a escala mientras protegen la privacidad.",
       },
       solution: {
-        title: "→ Solution",
-        desc: "Human coordination through incentives. Take photo of cleanup → AI validates impact → Earn rewards. All anonymous with Zero Knowledge Proofs.",
+        title: "→ Solución",
+        desc: "Coordinación humana a través de incentivos. Toma foto de limpieza → IA valida el impacto → Gana recompensas. Todo anónimo con Zero Knowledge Proofs.",
       },
       model: {
-        title: "→ Model",
-        desc: "5 AI Agents DAO + Safe Wallet. Corporations donate for green tax reduction NFTs. Manual MVP: operator distributes rewards to wallet list. Scales to full automation.",
+        title: "→ Modelo",
+        desc: "DAO de 5 Agentes IA + Safe Wallet. Corporaciones donan para NFTs de reducción de impuestos verdes. MVP manual: operador distribuye recompensas a lista de wallets. Escala a automatización completa.",
       },
     },
   },
@@ -230,12 +230,12 @@ export const translations = {
       title1: "ON NOV 15, 2025,",
       title2: "AT DEVCONNECT,",
       title3: "THE SKY FELL DOWN.",
-      subtitle: "WIND, RAIN, EXTREME HEAT IN 24 HOURS.",
+      subtitle: "WIND, RAIN, EXTREME HEAT IN 24 HOURS. in a summer month",
     },
     critical: {
       title: "While climate collapsed outside, inside we kept optimizing 0.001% APY yields.",
       description:
-        "Ethereum was born to coordinate humanity, not just speculate with it. 99% of dApps today are glorified casinos.",
+        "web3 was born to coordinate humanity, not just speculate with it. 99% of dApps today are glorified casinos.",
       highlight: "We have failed the original vision.",
     },
     solution: {
@@ -376,7 +376,7 @@ export const translations = {
         "A regenerative finance protocol for humanity. OG vibes. Cypher energy. A message from the future disguised as a white paper.",
       energy: "🜁 Powered by Open-Source Humanity",
       alerts: {
-        defi: "IF YOU'RE BUILDING DEFI YOU ARE NOT HUMAN 🚨",
+        defi: "IF YOU'RE BUILDING DEFI YOU ARE NOT HUMAN 🖕",
         refi: "FXK DEFI — BUILD REFI.",
       },
       powered: {
@@ -395,9 +395,9 @@ export const translations = {
         empty: "(Open to fill later)",
       },
       manifesto: {
-        p1: "Climate collapsed on November 15, 2025 at DevConnect Buenos Aires. While outside there was wind, rain, and extreme heat in 24 hours, inside we kept optimizing 0.001% yields. Ethereum was born to coordinate humanity, not just to speculate.",
+        p1: "Climate collapsed on November 15, 2025 at DevConnect Buenos Aires. While outside there was wind, rain, and extreme heat in 24 hours, inside we kept optimizing 0.001% yields. web3 was born to coordinate humanity, not just to speculate.",
         p2: "ReFi Universe Protocol uses Zero Knowledge Proofs to protect your privacy while verifying real impact. AI Agents (x402, ERC-8002) validate each cleanup against satellite data. No more greenwashing. No more KYC. Just math, impact, and rewards.",
-        p3: "This is Ethereum's original vision: coordinate humans to solve real problems. No casinos. No speculation. Regeneration.",
+        p3: "This is web3 original vision: coordinate humans to solve real problems. No casinos. No speculation. Regeneration.",
       },
       footer: {
         heading: "Footer",
@@ -444,12 +444,12 @@ export const translations = {
       title1: "EM 15 DE NOV DE 2025,",
       title2: "NO DEVCONNECT,",
       title3: "O CÉU CAIU.",
-      subtitle: "VENTO, CHUVA, CALOR EXTREMO EM 24 HORAS.",
+      subtitle: "VENTO, CHUVA, CALOR EXTREMO EM 24 HORAS. em um mês de verão",
     },
     critical: {
       title: "Enquanto o clima colapsava lá fora, dentro continuávamos otimizando rendimentos de 0.001% APY.",
       description:
-        "Ethereum nasceu para coordenar a humanidade, não apenas especular com ela. 99% dos dApps hoje são cassinos glorificados.",
+        "web3 nasceu para coordenar a humanidade, não apenas especular com ela. 99% dos dApps hoje são cassinos glorificados.",
       highlight: "Falhamos com a visão original.",
     },
     solution: {
@@ -590,7 +590,7 @@ export const translations = {
         "Um protocolo de finanças regenerativas para a humanidade. Vibes OG. Energia Cypher. Uma mensagem do futuro disfarçada como white paper.",
       energy: "🜁 Powered by Open-Source Humanity",
       alerts: {
-        defi: "SE VOCÊ ESTÁ CONSTRUINDO DEFI VOCÊ NÃO É HUMANO 🚨",
+        defi: "SE VOCÊ ESTÁ CONSTRUINDO DEFI VOCÊ NÃO É HUMANO 🖕",
         refi: "FXK DEFI — CONSTRUA REFI.",
       },
       powered: {
@@ -609,9 +609,9 @@ export const translations = {
         empty: "(Aberto para preencher depois)",
       },
       manifesto: {
-        p1: "O clima colapsou em 15 de novembro de 2025 no DevConnect Buenos Aires. Enquanto lá fora havia vento, chuva e calor extremo em 24 horas, dentro continuávamos otimizando rendimentos de 0.001%. Ethereum nasceu para coordenar a humanidade, não apenas para especular.",
+        p1: "O clima colapsou em 15 de novembro de 2025 no DevConnect Buenos Aires. Enquanto lá fora havia vento, chuva e calor extremo em 24 horas, dentro continuávamos otimizando rendimentos de 0.001%. web3 nasceu para coordenar a humanidade, não apenas para especular.",
         p2: "ReFi Universe Protocol usa Zero Knowledge Proofs para proteger sua privacidade enquanto verifica impacto real. Agentes AI (x402, ERC-8002) validam cada limpeza contra dados de satélite. Sem mais greenwashing. Sem mais KYC. Apenas matemática, impacto e recompensas.",
-        p3: "Esta é a visão original do Ethereum: coordenar humanos para resolver problemas reais. Sem cassinos. Sem especulação. Regeneração.",
+        p3: "Esta é a visão original do web3: coordenar humanos para resolver problemas reais. Sem cassinos. Sem especulação. Regeneração.",
       },
       footer: {
         heading: "Rodapé",
@@ -627,19 +627,19 @@ export const translations = {
       },
     },
     home: {
-      title: "ReFi Universe Protocol",
-      tagline: "Coordinate humans to clean the planet. Verify impact with AI. Protect privacy with ZK.",
+      title: "Protocolo ReFi Universe",
+      tagline: "Coordena humanos para limpar o planeta. Verifica o impacto com IA. Protege a privacidade com ZK.",
       problem: {
-        title: "→ Problem",
-        desc: "Carbon footprint from human activity is destroying the planet. Current systems can't coordinate cleanup at scale while protecting privacy.",
+        title: "→ Problema",
+        desc: "A pegada de carbono da atividade humana está destruindo o planeta. Os sistemas atuais não podem coordenar a limpeza em escala enquanto protegem a privacidade.",
       },
       solution: {
-        title: "→ Solution",
-        desc: "Human coordination through incentives. Take photo of cleanup → AI validates impact → Earn rewards. All anonymous with Zero Knowledge Proofs.",
+        title: "→ Solução",
+        desc: "Coordenação humana através de incentivos. Tire foto da limpeza → IA valida o impacto → Ganhe recompensas. Tudo anônimo com Zero Knowledge Proofs.",
       },
       model: {
-        title: "→ Model",
-        desc: "5 AI Agents DAO + Safe Wallet. Corporations donate for green tax reduction NFTs. Manual MVP: operator distributes rewards to wallet list. Scales to full automation.",
+        title: "→ Modelo",
+        desc: "DAO de 5 Agentes IA + Safe Wallet. Corporações doam para NFTs de redução de impostos verdes. MVP manual: operador distribui recompensas para lista de carteiras. Escala para automação completa.",
       },
     },
   },

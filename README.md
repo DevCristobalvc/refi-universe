@@ -31,7 +31,7 @@ ReFi Universe Protocol is a revolutionary DeFi application that coordinates huma
 - **Frontend**: Next.js 16, React, TypeScript
 - **Styling**: TailwindCSS with custom utilities
 - **UI Components**: Radix UI primitives
-- **Blockchain**: Ethereum-based (ZK-STARKs, ERC-8002)
+- **Blockchain**: web3-based (ZK-STARKs, ERC-8002)
 - **AI Standards**: x402 (AI Agent Work), ERC-8002 (Hybrid AI Logic)
 - **Package Manager**: pnpm
 
@@ -168,9 +168,9 @@ This project is open-source and available for the common good. Built with OG Cyp
 
 ## 🌟 Inspiration
 
-Born from the climate collapse witnessed at DevConnect Buenos Aires on November 15, 2025. While extreme weather hit outside, we realized Ethereum's true potential isn't just speculation—it's coordination of humanity to solve real-world problems.
+Born from the climate collapse witnessed at DevConnect Buenos Aires on November 15, 2025. While extreme weather hit outside, we realized web3's true potential isn't just speculation—it's coordination of humanity to solve real-world problems.
 
-**This is Ethereum's original vision: Regeneration, not speculation.**
+**This is web3's original vision: Regeneration, not speculation.**
 
 ---
 

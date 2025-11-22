@@ -1,32 +1,33 @@
 "use client"
 
-import { useState } from "react"
-import { ArrowLeft } from "lucide-react"
+import { useState, useEffect } from "react"
 import { useTranslation, type Locale } from "@/lib/translations"
-import { useLocale } from "@/lib/useLocale"
-import { LanguageSelector } from "@/components/language-selector"
-import Link from "next/link"
+import Header from "@/components/header"
+import MarqueeFooter from "@/components/marquee-footer"
 
 export default function ContextPage() {
-  const { locale, changeLocale } = useLocale()
+  const [locale, setLocale] = useState<Locale>("es")
+  const [mounted, setMounted] = useState(false)
   const t = useTranslation(locale)
+
+  useEffect(() => {
+    setMounted(true)
+    const saved = localStorage.getItem("refi-locale") as Locale | null
+    if (saved && ["en", "es", "pt"].includes(saved)) {
+      setLocale(saved)
+    }
+  }, [])
+
+  const changeLanguage = (newLocale: Locale) => {
+    setLocale(newLocale)
+    localStorage.setItem("refi-locale", newLocale)
+  }
+
+  if (!mounted) return null
 
   return (
     <div className="min-h-screen bg-white text-black font-mono">
-      {/* Header */}
-      <header className="border-b border-black/20 bg-white sticky top-0 z-50">
-        <nav className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3 hover:opacity-70 transition-opacity">
-              <ArrowLeft className="w-4 h-4" />
-              <div className="w-8 h-8 border-2 border-black flex items-center justify-center font-bold text-xs">RP</div>
-              <span className="font-bold text-sm tracking-tight">ReFi_Universe_Protocol</span>
-            </Link>
-
-            <LanguageSelector locale={locale} onLocaleChange={changeLocale} />
-          </div>
-        </nav>
-      </header>
+      <Header locale={locale} onLanguageChange={changeLanguage} />
 
       {/* Content */}
       <main className="container mx-auto px-4 py-12 max-w-4xl">
@@ -78,27 +79,35 @@ export default function ContextPage() {
             </div>
           </section>
 
-          {/* Inspiration Video */}
+          {/* Carbon Footprint Reality */}
           <section className="border border-black/20 p-4 space-y-3">
-            <h2 className="text-sm font-bold tracking-wide uppercase">{t.whitepaper.inspiration.heading}</h2>
-            <p className="text-xs opacity-60">{t.whitepaper.inspiration.video}</p>
-            <div className="aspect-video bg-black/5 flex items-center justify-center">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/3bEpfzz_m94?start=757"
-                title="Hombre en África"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <h2 className="text-sm font-bold tracking-wide uppercase">Carbon Footprint</h2>
+            <p className="text-xs opacity-60">
+              The reality of waste pollution destroying our planet. This is what we're fighting against.
+            </p>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="aspect-video bg-black/5 border border-black/10 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?w=800&q=80"
+                  alt="Waste pollution and environmental damage"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="aspect-video bg-black/5 border border-black/10 overflow-hidden">
+                <img
+                  src="https://www.greenpeace.org/static/planet4-colombia-stateless/2023/05/b0084200-gp1sxbaq_medium_res_with_credit_line.jpg"
+                  alt="Environmental impact - Greenpeace Colombia"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </section>
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-black bg-black text-white py-3 px-4 mt-12">
-        <p className="text-[10px] opacity-60 text-center">{t.whitepaper.footer.message}</p>
-      </footer>
+      <MarqueeFooter />
     </div>
   )
 }

@@ -1,32 +1,33 @@
 "use client"
 
-import { useState } from "react"
-import { ArrowLeft } from "lucide-react"
+import { useState, useEffect } from "react"
 import { useTranslation, type Locale } from "@/lib/translations"
-import { useLocale } from "@/lib/useLocale"
-import { LanguageSelector } from "@/components/language-selector"
-import Link from "next/link"
+import Header from "@/components/header"
+import MarqueeFooter from "@/components/marquee-footer"
 
 export default function UXPage() {
-  const { locale, changeLocale } = useLocale()
+  const [locale, setLocale] = useState<Locale>("es")
+  const [mounted, setMounted] = useState(false)
   const t = useTranslation(locale)
+
+  useEffect(() => {
+    setMounted(true)
+    const saved = localStorage.getItem("refi-locale") as Locale | null
+    if (saved && ["en", "es", "pt"].includes(saved)) {
+      setLocale(saved)
+    }
+  }, [])
+
+  const changeLanguage = (newLocale: Locale) => {
+    setLocale(newLocale)
+    localStorage.setItem("refi-locale", newLocale)
+  }
+
+  if (!mounted) return null
 
   return (
     <div className="min-h-screen bg-white text-black font-mono">
-      {/* Header */}
-      <header className="border-b border-black/20 bg-white sticky top-0 z-50">
-        <nav className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3 hover:opacity-70 transition-opacity">
-              <ArrowLeft className="w-4 h-4" />
-              <div className="w-8 h-8 border-2 border-black flex items-center justify-center font-bold text-xs">RP</div>
-              <span className="font-bold text-sm tracking-tight">ReFi_Universe_Protocol</span>
-            </Link>
-
-            <LanguageSelector locale={locale} onLocaleChange={changeLocale} />
-          </div>
-        </nav>
-      </header>
+      <Header locale={locale} onLanguageChange={changeLanguage} />
 
       {/* Content */}
       <main className="container mx-auto px-4 py-12 max-w-4xl">
@@ -98,10 +99,7 @@ export default function UXPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-black bg-black text-white py-3 px-4 mt-12">
-        <p className="text-[10px] opacity-60 text-center">{t.whitepaper.footer.message}</p>
-      </footer>
+      <MarqueeFooter />
     </div>
   )
 }

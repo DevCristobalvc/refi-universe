@@ -1,38 +1,37 @@
 "use client"
 
-import { useTranslation } from "@/lib/translations"
-import { useLocale } from "@/lib/useLocale"
-import { LanguageSelector } from "@/components/language-selector"
+import { useState, useEffect } from "react"
+import { useTranslation, type Locale } from "@/lib/translations"
+import Header from "@/components/header"
+import MarqueeFooter from "@/components/marquee-footer"
 import Link from "next/link"
 
 export default function Home() {
-  const { locale, changeLocale } = useLocale()
+  const [locale, setLocale] = useState<Locale>("es")
+  const [mounted, setMounted] = useState(false)
   const t = useTranslation(locale)
 
+  useEffect(() => {
+    setMounted(true)
+    const saved = localStorage.getItem("refi-locale") as Locale | null
+    if (saved && ["en", "es", "pt"].includes(saved)) {
+      setLocale(saved)
+    }
+  }, [])
+
+  const changeLanguage = (newLocale: Locale) => {
+    console.log('Cambiando idioma a:', newLocale)
+    setLocale(newLocale)
+    localStorage.setItem("refi-locale", newLocale)
+  }
+
+  if (!mounted) return null
+
   return (
-    <div className="h-screen bg-white text-black font-mono flex flex-col overflow-hidden">
-      {/* Header with language selector */}
-      <header className="border-b border-black/10 bg-white flex-shrink-0">
-        <nav className="container mx-auto px-3 py-2 md:px-6 md:py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex flex-col">
-              <span className="text-[8px] md:text-[10px] opacity-40 font-light tracking-wider uppercase">
-                WHITE PAPER — COMMON GOODS — OPEN SOURCE POWERED
-              </span>
-              <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
-                <div className="w-5 h-5 md:w-8 md:h-8 border-2 border-black flex items-center justify-center font-bold text-[9px] md:text-xs">
-                  🌎
-                </div>
-                <span className="font-bold text-[11px] md:text-sm tracking-tight">ReFiUP</span>
-              </Link>
-            </div>
+    <div className="min-h-screen bg-white text-black font-mono flex flex-col">
+      <Header locale={locale} onLanguageChange={changeLanguage} />
 
-            <LanguageSelector locale={locale} onLocaleChange={changeLocale} />
-          </div>
-        </nav>
-      </header>
-
-      <main className="flex-1 flex items-center justify-center px-4 md:px-6 overflow-hidden">
+      <main className="flex-1 flex items-center justify-center px-4 md:px-6 py-8 md:py-12">
         <div className="max-w-5xl w-full space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
           {/* Title Block */}
           <div className="space-y-2 md:space-y-3 text-center">
@@ -123,32 +122,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="border-t border-black bg-black text-white py-3 md:py-4 flex-shrink-0 w-full overflow-hidden relative">
-        <div className="absolute inset-0 flex items-center">
-          <div className="flex animate-marquee-slide">
-            <div className="flex whitespace-nowrap">
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ETH CALI</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ETH COLOMBIA</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">UVD</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">AFRICA</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">OG</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">CYPHER</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ALERT</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">REKT</span>
-            </div>
-            <div className="flex whitespace-nowrap" aria-hidden="true">
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ETH CALI</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ETH COLOMBIA</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">UVD</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">AFRICA</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">OG</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">CYPHER</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">ALERT</span>
-              <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">REKT</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <MarqueeFooter />
     </div>
   )
 }

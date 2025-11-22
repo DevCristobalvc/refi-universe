@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   keywords: [
     "ReFi",
     "Regenerative Finance",
-    "Ethereum",
+    "web3",
     "ZK-Proofs",
     "AI",
     "Cypherpunk",
