@@ -168,23 +168,27 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-black bg-black text-white py-2 flex-shrink-0 overflow-hidden">
-        <div className="whitespace-nowrap animate-marquee-slide inline-block">
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">ETH CALI</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">ETH COLOMBIA</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">UVD</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">AFRICA</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">OG</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">CYPHER</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">ALERT</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">REKT</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">ETH CALI</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">ETH COLOMBIA</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">UVD</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">AFRICA</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">OG</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">CYPHER</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">ALERT</span>
-          <span className="inline-block mx-4 text-[10px] md:text-xs font-bold">REKT</span>
+        <div className="flex animate-marquee-slide">
+          <div className="flex whitespace-nowrap">
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ETH CALI</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ETH COLOMBIA</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">UVD</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">AFRICA</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">OG</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">CYPHER</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ALERT</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">REKT</span>
+          </div>
+          <div className="flex whitespace-nowrap" aria-hidden="true">
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ETH CALI</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ETH COLOMBIA</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">UVD</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">AFRICA</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">OG</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">CYPHER</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">ALERT</span>
+            <span className="inline-block px-8 text-[10px] md:text-xs font-bold">REKT</span>
+          </div>
         </div>
       </footer>
     </div>
