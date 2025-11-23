@@ -5,6 +5,15 @@ export default function MarqueeFooter() {
         <div className="flex animate-marquee-slide">
           <div className="flex whitespace-nowrap">
             <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">
+              ETHEREUM FOUNDATION
+            </span>
+            <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">
+              CELO
+            </span>
+            <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">
+              SELF
+            </span>
+            <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">
               ETH CALI
             </span>
             <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">
@@ -30,6 +39,15 @@ export default function MarqueeFooter() {
             </span>
           </div>
           <div className="flex whitespace-nowrap" aria-hidden="true">
+            <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">
+              ETHEREUM FOUNDATION
+            </span>
+            <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">
+              CELO
+            </span>
+            <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">
+              SELF
+            </span>
             <span className="inline-block px-6 md:px-10 lg:px-12 text-[10px] md:text-xs lg:text-sm font-bold tracking-wider">
               ETH CALI
             </span>
